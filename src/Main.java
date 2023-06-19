@@ -45,14 +45,14 @@ public class Main {
                         HashMap<String, Integer> maxProfitAndName = monthReport.maxProfitPerMonth();
                         HashMap<String, Integer> maxSpendAndName = monthReport.maxSpendPerMonth();
                         System.out.println("Месяц: 0" + (monthReport.monthNumber + 1));
-                        String ProfitKey = "";
-                        for (String keySet : maxProfitAndName.keySet()) { ProfitKey = keySet; }
-                        System.out.println("Самый прибыльный товар: " + ProfitKey);
-                        System.out.println("На сумму: " + maxProfitAndName.get(ProfitKey));
-                        String SpendKey = "";
-                        for (String keySet : maxSpendAndName.keySet()) { SpendKey = keySet; }
-                        System.out.println("Самая большая трата: " + SpendKey);
-                        System.out.println("На сумму: " + maxSpendAndName.get(SpendKey));
+                        String profitKey = "";
+                        for (String keySet : maxProfitAndName.keySet()) { profitKey = keySet; }
+                        System.out.println("Самый прибыльный товар: " + profitKey);
+                        System.out.println("На сумму: " + maxProfitAndName.get(profitKey));
+                        String spendKey = "";
+                        for (String keySet : maxSpendAndName.keySet()) { spendKey = keySet; }
+                        System.out.println("Самая большая трата: " + spendKey);
+                        System.out.println("На сумму: " + maxSpendAndName.get(spendKey));
                         System.out.println(" ");
                     }
                 } else {
@@ -89,27 +89,21 @@ public class Main {
     }
 
     public static boolean checkMonthReport (ReportPerMonth[] reportPerMonth) {
-        boolean checkEveryMonth = false;
         for (ReportPerMonth perMonth : reportPerMonth) {
             if (perMonth == null) {
                 return false;
-            } else {
-                checkEveryMonth = true;
             }
         }
-        return checkEveryMonth;
+        return true;
     }
 
     public static boolean checkYearReport (ReportPerYear[] reportPerYear) {
-        boolean checkEveryYear = false;
         for (ReportPerYear perYear : reportPerYear) {
             if (perYear == null) {
                 return false;
-            } else {
-                checkEveryYear = true;
             }
         }
-        return checkEveryYear;
+        return true;
     }
 
     public static boolean compareAmount (ReportPerYear[] reportPerYear, ReportPerMonth monthReport) {
